@@ -34,6 +34,7 @@ func (cl *CASLocker) UnLock() {
 	atomic.AddInt32(cl.status, Unlocked)
 }
 
+// CompareAndSwap is a atomic operation,
 func (cl *CASLocker) TryLock() bool {
 	if atomic.CompareAndSwapInt32((*int32)(unsafe.Pointer(&cl.mutex)), Unlocked, Locked) {
 		atomic.AddInt32(cl.status, Locked)
