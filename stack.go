@@ -18,19 +18,25 @@ func (s *Stack) New() *Stack {
 
 func (s *Stack) Push(data interface{}) {
 	s.lock.Lock()
+	defer s.lock.Unlock()
 	s.items = append(s.items, data)
-	s.lock.Unlock()
 }
 
 func (s *Stack) Pop() interface{} {
 	s.lock.Lock()
+	defer s.lock.Unlock()
+	if len(s.items) < 1 {
+		return nil
+	}
 	item := s.items[len(s.items)-1]
 	s.items = s.items[0 : len(s.items)-1]
-	s.lock.Unlock()
 	return item
 }
 
 func (s *Stack) Top() interface{} {
+	if len(s.items) < 1 {
+		return nil
+	}
 	return s.items[len(s.items)-1]
 }
 
