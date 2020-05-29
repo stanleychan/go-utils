@@ -5,13 +5,22 @@ import (
 	"time"
 )
 
-var letters = []rune("0123456789abcdefghijklmhopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var letters = []byte("0123456789abcdefghijklmhopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var numLetters =[]byte("0123456789")
 
 // Generate a random string of n bits
-func RandString(n int) string {
+func RandString(n uint) string {
 	b := make([]byte, n)
 	for i := range b {
-		b[i] = byte(letters[rand.Int63()%int64(len(letters))])
+		b[i] = letters[rand.Int63()%int64(len(letters))]
+	}
+	return string(b)
+}
+
+func RandNum(n uint) string {
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = numLetters[rand.Int63()%int64(len(letters))]
 	}
 	return string(b)
 }
