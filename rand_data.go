@@ -11,16 +11,18 @@ var numLetters =[]byte("0123456789")
 // Generate a random string of n bits
 func RandString(n uint) string {
 	b := make([]byte, n)
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := range b {
-		b[i] = letters[rand.Int63()%int64(len(letters))]
+		b[i] = letters[r.Intn(len(letters))]
 	}
 	return string(b)
 }
 
 func RandNum(n uint) string {
 	b := make([]byte, n)
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := range b {
-		b[i] = numLetters[rand.Int63()%int64(len(letters))]
+		b[i] = numLetters[r.Intn(len(numLetters))]
 	}
 	return string(b)
 }
