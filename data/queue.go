@@ -1,4 +1,4 @@
-package utils
+package data
 
 type Queue struct {
 	list *LinkedList

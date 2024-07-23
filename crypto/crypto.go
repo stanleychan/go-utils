@@ -3,7 +3,7 @@
  * @description:  description
  * @date:         2019-04-22
  */
-package utils
+package crypto
 
 import (
 	"bytes"

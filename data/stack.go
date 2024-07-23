@@ -1,10 +1,10 @@
-package utils
+package data
 
 import (
 	"sync"
 )
 
-type Item  = interface {}
+type Item = interface{}
 
 type Stack struct {
 	items []Item
@@ -12,7 +12,7 @@ type Stack struct {
 }
 
 func (s *Stack) New() *Stack {
-	s.items = make([]Item,0)
+	s.items = make([]Item, 0)
 	return s
 }
 
