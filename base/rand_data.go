@@ -1,4 +1,4 @@
-package utils
+package base
 
 import (
 	"math/rand"
@@ -6,7 +6,7 @@ import (
 )
 
 var letters = []byte("0123456789abcdefghijklmhopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-var numLetters =[]byte("0123456789")
+var numLetters = []byte("0123456789")
 
 // Generate a random string of n bits
 func RandString(n uint) string {

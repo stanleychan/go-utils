@@ -1,1 +1,68 @@
-.idea
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# Build output directory
+/bin/
+/dist/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Go debug files
+debug
+
+# Profiling files
+*.prof
+
+# Generated files
+*.gen.go
+
+# Dependency lock file (uncomment if you're not using modules)
+# Gopkg.lock
+
+# Test coverage output
+coverage.txt
+
