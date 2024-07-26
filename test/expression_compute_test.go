@@ -12,11 +12,11 @@ func TestExpressionCompute(t *testing.T) {
 		expected float64
 		hasError bool
 	}{
-		{"Simple Addition", "-3+(2.5+3.5)*2", 9, false},
+		{"Simple Addition", "-3+(2.5+3.2) *2", 8.4, false},
 		{"Simple Max", "max(2,3)", 3, false},
 		{"Min with Multiple Arguments", "min(1,2)", 1, false},
 		{"Nested Max", "max(1,max(2,3))", 3, false},
-		{"Complex Expression(include min)", "2+min(3,4)*2", 8, false},
+		{"Complex Expression(include min)", "2+min(3,4)^2*2-5", 15, false},
 
 		{"Negative Number Multiple Positive Number Expression ", "3*(-2)", -6, false},
 		{"Negative Numbers Multiple Expression", "-3*(-2)+max(5,6)", 12, false},

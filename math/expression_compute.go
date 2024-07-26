@@ -79,6 +79,7 @@ func formatParams(exp string) ([]string, error) {
 	if len(exp) == 0 {
 		return nil, errors.New("no expression")
 	}
+	exp = strings.ToLower(exp)
 	isValid := true
 	var builder strings.Builder
 	for _, r := range exp {
